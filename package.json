@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/free-brands-svg-icons": "^5.10.2",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "nanoid": "^2.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-providers": "^2.0.1",
     "react-redux": "^7.1.0",
     "react-scripts": "3.1.0",
+    "reactjs-localstorage": "0.0.7",
     "redux-localstorage": "^0.4.1",
     "redux-logger": "^3.0.6"
   },
