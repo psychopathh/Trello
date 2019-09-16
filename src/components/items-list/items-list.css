@@ -1,0 +1,56 @@
+.item-wrap {
+  position: relative;
+  margin-right: 50px;
+  width: 250px;
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 150ms ease-in-out;
+  animation: eMLfYp 300ms linear;
+}
+
+.item-value {
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.item-input {
+  text-align: center;
+}
+
+.items-input {
+  padding: 11px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.23);
+  margin-bottom: 10px;
+}
+
+.delete-item {
+  width: 15px;
+  height: 15px;
+  background: url('../../images/icon-delete.svg') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  right: 10px;
+  transition: 0.1s;
+  top: 10px;
+  cursor: pointer;
+}
+
+.items-value {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.23);
+  cursor: pointer;
+  background: #3D9AD1;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+}

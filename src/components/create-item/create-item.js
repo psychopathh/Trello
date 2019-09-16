@@ -13,7 +13,7 @@ class CreateItem extends Component {
   };
 
   cancelCreate = () => {
-    this.setState({ create: false, showError: true });
+    this.setState({ create: false, showError: true, inputValue: "" });
   };
 
   setInput = e => {
@@ -62,6 +62,11 @@ class CreateItem extends Component {
             className={"create-input"}
             value={this.state.inputValue}
             onChange={this.setInput}
+            onKeyPress={event => {
+              if (event.key === "Enter") {
+                this.createBoardItem();
+              }
+            }}
           />
           <div className={"create-error"}>
             {!this.state.showError ? "Введите название доски." : null}
