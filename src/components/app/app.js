@@ -50,36 +50,31 @@ export default class App extends Component {
     });
   };
 
-  createValue = (id, value) => {
+  createValue = (id, value, idBoard) => {
     const newId = nanoid();
-    let _itemList;
 
     const newListValue = {
-      newId,
-      value
+      id: newId,
+      value,
+      done: false
     };
 
-    this.state.trelloBoard.forEach(function(item, i, arr) {
-      if (item.list.find(({ id: Id }) => Id === id)) {
-        _itemList = arr[i];
-        return _itemList;
-      }
-    });
+    const currentBoard = this.state.trelloBoard.find(
+      ({ id }) => id === idBoard
+    );
+    const _itemList = currentBoard.list.find(({ id: Id }) => Id === id);
 
     this.setState(state => {
-      const listItem = _itemList.list.find(({ id: Id }) => Id === id);
-      const newListItemValue = [...listItem.listValue, newListValue];
-      const newListItem = {...listItem, listValue: newListItemValue};
-      const newItemList = _itemList.list.filter(
-        ({ id: Id }) => Id !== id
+      const newListItemValue = [..._itemList.listValue, newListValue];
+      const newItemList = {..._itemList, listValue: newListItemValue};
+      const newList = currentBoard.list.map(listItem =>
+        listItem.id === id ? newItemList : listItem
       );
-      const newList = [...newItemList, newListItem];
-      const newBoardItemList = {..._itemList, list: newList};
-      const newTrelloBoard = state.trelloBoard.filter(
-        ({ id: Id }) => Id !== _itemList.id
+      const trelloBoard = state.trelloBoard.map(boardItem =>
+        boardItem.id === idBoard ? { ...boardItem, list: newList } : boardItem
       );
-      const trelloBoard = [...newTrelloBoard, newBoardItemList];
-      return {trelloBoard};
+
+      return { trelloBoard };
     });
   };
 
