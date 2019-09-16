@@ -1,21 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import "./board-list.css";
 import { storeConsumer } from "../../hoc";
+import { withRouter } from "react-router";
 
-class BoardList extends Component {
-  render() {
-    const { trelloBoard } = this.props;
-
-    return trelloBoard.map(item => (
-      <div className={"board-item"} key={item.id}>
-        {item.name}
-      </div>
-    ));
-  }
-}
+const BoardList = ({deleteBoard,trelloBoard,history}) => {
+  
+  return trelloBoard.map(item => (
+    <div className={"board-item"} key={item.id} onClick={()=>{
+      history.push(`/item/${item.id}`)
+    }}>
+      {item.name}
+      <div
+        className={"delete-item"}
+        onClick={(e) => {
+          e.stopPropagation()
+          deleteBoard(item.id)}}
+      ></div>
+    </div>
+  ));
+};
 
 const mapStateToProps = state => {
   return state;
 };
 
-export default storeConsumer(BoardList, mapStateToProps);
+export default storeConsumer(withRouter(BoardList), mapStateToProps);

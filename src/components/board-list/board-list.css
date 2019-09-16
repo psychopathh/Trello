@@ -10,8 +10,24 @@
   align-items: center;
   justify-content: center;
   margin-right: 50px;
+  position: relative;
 }
 
 .board-item:hover {
+  transform: scale(1.1);
+}
+
+.delete-item {
+  width: 15px;
+  height: 15px;
+  background: url('../../images/icon-delete.svg') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  right: 10px;
+  transition: 0.1s;
+  top: 10px;
+}
+
+.delete-item:hover {
   transform: scale(1.1);
 }
