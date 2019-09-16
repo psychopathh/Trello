@@ -54,3 +54,7 @@
   padding: 10px;
   margin-bottom: 5px;
 }
+
+.items-value.done{
+  background: gray;
+}

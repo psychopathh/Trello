@@ -5,18 +5,19 @@ import { withRouter } from "react-router";
 
 class ItemsList extends Component {
   state = {
-    inputValue: '',
+    inputValue: "",
+    done: false
   };
 
   setInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  createListItem = (e) => {
+  createListItem = e => {
     if (e.key === "Enter" && e.target.value !== "") {
       const itemValue = this.state[e.target.name];
-      this.props.createValue(e.target.name, itemValue);
-      e.target.value = '';
+      this.props.createValue(e.target.name, itemValue, this.props.match.params.id);
+      e.target.value = "";
     } else {
       return null;
     }
@@ -24,6 +25,7 @@ class ItemsList extends Component {
 
   render() {
     const { trelloBoard, match, deleteList } = this.props;
+    const { done } = this.state;
     const item = trelloBoard.filter(item => item.id === match.params.id);
     return item[0].list.map(item => (
       <div key={item.id} id={item.id} className="item-wrap">
@@ -43,11 +45,14 @@ class ItemsList extends Component {
             onKeyUp={this.createListItem}
           />
         </div>
-        {
-          item.listValue.map(itemValue=>(
-            <div key={itemValue.id} className="items-value">{itemValue.value}</div>
-          ))
-        }
+        {item.listValue.map(itemValue => (
+          <div
+            key={itemValue.id}
+            className={done ? "items-value done" : "items-value"}
+          >
+            {itemValue.value}
+          </div>
+        ))}
       </div>
     ));
   }

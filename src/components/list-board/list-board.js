@@ -9,7 +9,7 @@ class ListBoard extends Component {
     const {createList, deleteList, itemId, createValue} = this.props;
 		return(
 			<div className="wrap">
-        <ItemsList deleteList={deleteList} createValue={createValue}/>
+        <ItemsList deleteList={deleteList} createValue={createValue} />
 				<CreateList createList={createList} itemId={itemId}/>
 			</div>
 		)
