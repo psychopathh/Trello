@@ -1,22 +1,21 @@
 import React,{ Component } from 'react';
 import './trello-board.css';
-import { storeConsumer } from '../../hoc';
+import CreateItem from '../create-item';
+import BoardList from '../board-list';
+import { withRouter } from "react-router";
 
 class TrelloBoard extends Component {
 
-	render(){
+	render() {
+    const {deleteBoard,createBoard} = this.props;
+
 		return(
-			<div>
-				1
+			<div className="wrap">
+				<CreateItem createBoard={createBoard}/>
+        <BoardList deleteBoard={deleteBoard} />
 			</div>
 		)
 	}
 };
 
-const mapStateToProps = (state) =>{
-  return {
-    trelloBoard: state.trelloBoard
-  }
-}
-
-export default storeConsumer(TrelloBoard, mapStateToProps);
+export default withRouter(TrelloBoard);

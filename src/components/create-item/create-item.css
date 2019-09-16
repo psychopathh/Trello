@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3D9AD1;
+  width: 250px;
+  color: #fff;
+  font-size: 17px;
+  padding: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.9);
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.wrapper:hover {
+  transform: scale(1.1);
+}
+
+.create-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  background: #3D9AD1;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.9);
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.create-wrap:hover {
+  transform: scale(1.1);
+}
+
+.create-top {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.create-cancel {
+  width: 20px;
+  height: 20px;
+  background: url(../../images/icon-cancel.svg) no-repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  transition: 0.1s;
+}
+
+.create-cancel:hover {
+  transform: scale(1.1);
+}
+
+.create-bottom {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-name {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.create-input {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 30px;
+  border-radius: 4px;
+  padding-left: 15px;
+}
+
+.create-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.create-button-cancel {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.create-button-save {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.create-error {
+  color: #000;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
